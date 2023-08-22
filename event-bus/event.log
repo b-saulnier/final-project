@@ -1,0 +1,89 @@
+2023-08-22T16:55:12.113Z [INFO]: (Process ID 33129) Event bus service listening on port 4001
+2023-08-22T16:55:24.987Z [INFO]: (Process ID 33129) Received event: PollCreated
+2023-08-22T16:55:24.987Z [INFO]: [object Object]
+2023-08-22T16:55:24.987Z [INFO]: http://localhost:4000/events
+2023-08-22T16:55:25.010Z [INFO]: http://localhost:4002/events
+2023-08-22T16:55:25.011Z [INFO]: http://localhost:4003/events
+2023-08-22T16:55:25.012Z [INFO]: http://localhost:4004/events
+2023-08-22T16:55:25.013Z [INFO]: http://localhost:4005/events
+2023-08-22T16:55:25.032Z [ERROR]: (Process ID 33129) Event Bus Service: TypeError: fetch failed
+2023-08-22T16:55:25.050Z [INFO]: fetch http://localhost:4003/events succeeded
+2023-08-22T16:55:25.052Z [INFO]: fetch http://localhost:4005/events succeeded
+2023-08-22T16:55:25.054Z [INFO]: fetch http://localhost:4004/events succeeded
+2023-08-22T16:55:25.057Z [INFO]: fetch http://localhost:4000/events succeeded
+2023-08-22T16:58:20.759Z [35094] [INFO]: (Process ID 35094) Event bus service listening on port 4001
+2023-08-22T16:58:26.391Z (35131] [INFO]: (Process ID 35131) Event bus service listening on port 4001
+2023-08-22T16:58:28.475Z (35189) [INFO]: (Process ID 35189) Event bus service listening on port 4001
+2023-08-22T16:58:35.173Z (35189) [INFO]: (Process ID 35189) Received event: RadioChosen
+2023-08-22T16:58:35.174Z (35189) [INFO]: [object Object]
+2023-08-22T16:58:35.174Z (35189) [INFO]: http://localhost:4000/events
+2023-08-22T16:58:35.191Z (35189) [INFO]: http://localhost:4002/events
+2023-08-22T16:58:35.191Z (35189) [INFO]: http://localhost:4003/events
+2023-08-22T16:58:35.192Z (35189) [INFO]: http://localhost:4004/events
+2023-08-22T16:58:35.193Z (35189) [INFO]: http://localhost:4005/events
+2023-08-22T16:58:35.208Z (35189) [ERROR]: (Process ID 35189) Event Bus Service: TypeError: fetch failed
+2023-08-22T16:58:35.222Z (35189) [INFO]: fetch http://localhost:4005/events succeeded
+2023-08-22T16:58:35.223Z (35189) [INFO]: fetch http://localhost:4004/events succeeded
+2023-08-22T16:58:35.225Z (35189) [INFO]: fetch http://localhost:4000/events succeeded
+2023-08-22T16:58:35.238Z (35189) [INFO]: fetch http://localhost:4003/events succeeded
+2023-08-22T16:59:07.221Z (35239) [INFO]: (Process ID 35239) Event bus service listening on port 4001
+2023-08-22T16:59:10.035Z (35272) [INFO]: (Process ID 35272) Event bus service listening on port 4001
+2023-08-22T16:59:12.148Z (35300) [INFO]: (Process ID 35300) Event bus service listening on port 4001
+2023-08-22T16:59:16.165Z (35359) [INFO]: (Process ID 35359) Event bus service listening on port 4001
+2023-08-22T16:59:18.695Z (35389) [INFO]: (Process ID 35389) Event bus service listening on port 4001
+2023-08-22T16:59:21.385Z (35417) [INFO]: (Process ID 35417) Event bus service listening on port 4001
+2023-08-22T16:59:34.846Z (35417) [INFO]: (Process ID 35417) Received event: PollCreated
+2023-08-22T16:59:34.846Z (35417) [INFO]: [object Object]
+2023-08-22T16:59:34.846Z (35417) [INFO]: http://localhost:4000/events
+2023-08-22T16:59:34.862Z (35417) [INFO]: http://localhost:4002/events
+2023-08-22T16:59:34.863Z (35417) [INFO]: http://localhost:4003/events
+2023-08-22T16:59:34.864Z (35417) [INFO]: http://localhost:4004/events
+2023-08-22T16:59:34.864Z (35417) [INFO]: http://localhost:4005/events
+2023-08-22T16:59:34.878Z (35417) [ERROR]: (Process ID 35417) Event Bus Service: fetch to service 4002: TypeError: fetch failed
+2023-08-22T16:59:34.892Z (35417) [INFO]: fetch http://localhost:4003/events succeeded
+2023-08-22T16:59:34.893Z (35417) [INFO]: fetch http://localhost:4004/events succeeded
+2023-08-22T16:59:34.894Z (35417) [INFO]: fetch http://localhost:4005/events succeeded
+2023-08-22T16:59:34.895Z (35417) [INFO]: fetch http://localhost:4000/events succeeded
+2023-08-22T17:00:21.470Z (35522) [INFO]: (Process ID 35522) Event bus service listening on port 4001
+2023-08-22T17:00:26.310Z (35561) [INFO]: (Process ID 35561) Event bus service listening on port 4001
+2023-08-22T17:05:46.224Z (35561) [INFO]: (Process ID 35561) Received event: RadioChosen
+2023-08-22T17:05:46.224Z (35561) [INFO]: [object Object]
+2023-08-22T17:05:46.224Z (35561) [INFO]: http://localhost:4000/events
+2023-08-22T17:05:46.242Z (35561) [INFO]: http://localhost:4002/events
+2023-08-22T17:05:46.243Z (35561) [INFO]: http://localhost:4003/events
+2023-08-22T17:05:46.244Z (35561) [INFO]: http://localhost:4004/events
+2023-08-22T17:05:46.245Z (35561) [INFO]: http://localhost:4005/events
+2023-08-22T17:05:46.262Z (35561) [ERROR]: (Process ID 35561) Event Bus Service: fetch to service 4002: TypeError: fetch failed
+2023-08-22T17:05:46.278Z (35561) [INFO]: fetch http://localhost:4004/events succeeded
+2023-08-22T17:05:46.288Z (35561) [INFO]: fetch http://localhost:4003/events succeeded
+2023-08-22T17:05:46.290Z (35561) [INFO]: fetch http://localhost:4005/events succeeded
+2023-08-22T17:05:46.292Z (35561) [INFO]: fetch http://localhost:4000/events succeeded
+2023-08-22T17:05:48.283Z (35561) [INFO]: (Process ID 35561) Received event: RadioChosen
+2023-08-22T17:05:48.283Z (35561) [INFO]: [object Object]
+2023-08-22T17:05:48.283Z (35561) [INFO]: http://localhost:4000/events
+2023-08-22T17:05:48.284Z (35561) [INFO]: http://localhost:4002/events
+2023-08-22T17:05:48.284Z (35561) [INFO]: http://localhost:4003/events
+2023-08-22T17:05:48.285Z (35561) [INFO]: http://localhost:4004/events
+2023-08-22T17:05:48.285Z (35561) [INFO]: http://localhost:4005/events
+2023-08-22T17:05:48.292Z (35561) [INFO]: fetch http://localhost:4003/events succeeded
+2023-08-22T17:05:48.293Z (35561) [INFO]: fetch http://localhost:4004/events succeeded
+2023-08-22T17:05:48.294Z (35561) [INFO]: fetch http://localhost:4005/events succeeded
+2023-08-22T17:05:48.294Z (35561) [INFO]: fetch http://localhost:4000/events succeeded
+2023-08-22T17:05:48.295Z (35561) [ERROR]: (Process ID 35561) Event Bus Service: fetch to service 4002: TypeError: fetch failed
+2023-08-22T17:06:26.825Z (35561) [INFO]: (Process ID 35561) Received event: PollCreated
+2023-08-22T17:06:26.825Z (35561) [INFO]: [object Object]
+2023-08-22T17:06:26.825Z (35561) [INFO]: http://localhost:4000/events
+2023-08-22T17:06:26.826Z (35561) [INFO]: http://localhost:4002/events
+2023-08-22T17:06:26.826Z (35561) [INFO]: http://localhost:4003/events
+2023-08-22T17:06:26.827Z (35561) [INFO]: http://localhost:4004/events
+2023-08-22T17:06:26.827Z (35561) [INFO]: http://localhost:4005/events
+2023-08-22T17:06:26.834Z (35561) [ERROR]: (Process ID 35561) Event Bus Service: fetch to service 4002: TypeError: fetch failed
+2023-08-22T17:06:26.835Z (35561) [INFO]: fetch http://localhost:4000/events succeeded
+2023-08-22T17:06:26.836Z (35561) [INFO]: fetch http://localhost:4005/events succeeded
+2023-08-22T17:06:26.837Z (35561) [INFO]: fetch http://localhost:4004/events succeeded
+2023-08-22T17:06:26.841Z (35561) [INFO]: fetch http://localhost:4003/events succeeded
+2023-08-22T17:15:27.522Z (36958) [INFO]: (Process ID 36958) Event bus service listening on port 4001
+2023-08-22T17:15:27.522Z (36959) [INFO]: (Process ID 36959) Event bus service listening on port 4001
+2023-08-22T17:15:27.541Z (36960) [INFO]: (Process ID 36960) Event bus service listening on port 4001
+2023-08-22T17:15:27.552Z (36961) [INFO]: (Process ID 36961) Event bus service listening on port 4001
+2023-08-22T17:15:27.604Z (36962) [INFO]: (Process ID 36962) Event bus service listening on port 4001
