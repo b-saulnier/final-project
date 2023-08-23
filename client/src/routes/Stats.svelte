@@ -15,26 +15,16 @@
     let percent = parseFloat(100 * poll.options[option]/total).toFixed(2)+"%";
     console.log("percent", percent);
     
-
 </script>
 
-<!-- 
-{#each Object.entries(poll.options) as [option, count]}
-    <p>{option}: {parseFloat(100 * count/total).toFixed(2)+"%"} ({count})</p>
-{/each} -->
 
+<div>
+    <span class="badge bg-secondary">{percent}</span>
+    <span class="badge bg-secondary">{poll.options[option]}</span>
+</div>
 
-<!-- displays the 'progress bar' bar chart -->
-
-
-<!-- <div class="progress">
-    <div>Wait what?</div>
-    
-</div> -->
-
-<span class="badge bg-secondary">{percent}</span>
-<span class="badge bg-secondary">{poll.options[option]}</span>
-
-<div class="progress">
-    <div class="progress-bar" style="width:{percent}"></div>
+<div>
+    <div class="progress">
+        <div class="progress-bar" style="width:{percent}"></div>
+    </div>
 </div>

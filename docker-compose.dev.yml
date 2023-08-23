@@ -1,0 +1,57 @@
+version: '3.9'
+services:
+  client:
+    build: client
+    ports:
+      - '3000:3000'
+    volumes:
+      - /usr/app/node_modules
+      - ./client:/app/usr
+      - /usr/app/build
+  query:
+    build: query
+    ports:
+      - '4000:4000'
+    volumes:
+      - /usr/app/node_modules
+      - ./query:/app/usr
+  event-bus:
+    build: event-bus
+    volumes:
+      - /usr/app/node_modules
+      - ./event-bus:/app/usr
+  poll:
+    build: poll
+    ports:
+      - '4003:4003'
+    volumes:
+      - /usr/app/node_modules
+      - ./poll:/app/usr
+  radio:
+    build: radio
+    ports:
+      - '4004:4004'
+    volumes:
+      - /usr/app/node_modules
+      - ./radio:/app/usr
+  stat:
+    build: stat
+    ports:
+      - '4005:4005'
+    volumes:
+      - /usr/app/node_modules
+      - ./stat:/app/usr
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+volumes:
+  mongodb-data:
+  
+  

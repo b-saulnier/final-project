@@ -6,8 +6,8 @@
 
 </script>
 
-
-<Restart />
+<!-- useful for debugging -->
+<!-- <Restart /> -->
 
 <div class="container pt-5">
 

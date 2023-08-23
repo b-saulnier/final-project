@@ -51,7 +51,7 @@ app.post('/polls/:pollId/:radioOption', async (req, res) => {
 
         store.write(radios);
 
-        await fetch('http://localhost:4001/events', {
+        await fetch('http://event-bus:4001/events', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

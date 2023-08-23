@@ -62,7 +62,7 @@ app.post('/polls', async (req, res) => {
 
 
         logger.info(`(Process ID ${process.pid}) Poll Service: sending PollCreated event`);
-        await fetch('http://localhost:4001/events', {
+        await fetch('http://event-bus:4001/events', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

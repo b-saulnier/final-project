@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  client:
+    build: client
+    ports:
+      - '3000:3000'
+  query:
+    build: query
+    ports:
+      - '4000:4000'
+  event-bus:
+    build: event-bus
+  poll:
+    build: poll
+    ports:
+      - '4003:4003'
+  radio:
+    build: radio
+    ports:
+      - '4004:4004'
+  stat:
+    build: stat
+    ports:
+      - '4005:4005'
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+volumes:
+  mongodb-data:
+  

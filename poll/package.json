@@ -24,6 +24,7 @@
   },
   "contributors": [],
   "scripts": {
+    "docker-start": "pm2-runtime start index.js --name poll -i 5",
     "start": "pm2 start index.js --name poll -i 5",
     "stop": "pm2 delete poll",
     "dev": "nodemon index.js",

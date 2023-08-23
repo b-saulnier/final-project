@@ -33,12 +33,12 @@ const logger = winston.createLogger({
 */
 
 const services = [
-    {host: 'http://localhost', port: 4000},
-    //{host: 'http://localhost', port: 4001},
-    {host: 'http://localhost', port: 4002},
-    {host: 'http://localhost', port: 4003},
-    {host: 'http://localhost', port: 4004},
-    {host: 'http://localhost', port: 4005}
+    {host: 'query', port: 4000},
+    //{host: 'http://localhost', port: 4001}, // this service runs on 4001, so no need to send events to it
+    // {host: 'http://localhost', port: 4002}, // this port was not used
+    {host: 'poll', port: 4003},
+    {host: 'radio', port: 4004},
+    {host: 'stat', port: 4005}
 ];
 
 app.post('/events', (req, res) => {
@@ -52,7 +52,7 @@ app.post('/events', (req, res) => {
 
     services.forEach(async service => {
         try {
-            const url = `${service.host}:${service.port}/events`;
+            const url = `http://${service.host}:${service.port}/events`;
             //console.log(url);
             logger.info(url);
 
