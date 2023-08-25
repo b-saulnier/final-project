@@ -22,16 +22,18 @@ services:
     build: stat
     ports:
       - '4005:4005'
-  mongodb:
-    image: mongo:latest
-    volumes:
-      - mongodb-data:/data/db
+  database:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
     ports:
       - '27017:27017'
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongodb_data:/data/db
 
 volumes:
-  mongodb-data:
+  mongodb_data:
   

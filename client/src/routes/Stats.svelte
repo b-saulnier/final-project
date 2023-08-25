@@ -1,12 +1,6 @@
 <script>
-    import { store } from "./store.js";
-    // import { onMount } from "svelte";
-
     export let option = "";
     export let poll = {};
-
-    
-
 
     // so the stats data should be included in the query service, so it should already exist
 

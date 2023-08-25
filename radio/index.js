@@ -37,19 +37,8 @@ app.post('/polls/:pollId/:radioOption', async (req, res) => {
         });
     }
 
-
-    const radios = store.read();
-
     try {
-        
-        
-        const poll = radios[pollId] || {};
-        let count = poll[radioOption] || 0;
-        count++;
-        poll[radioOption] = count;
-        radios[pollId] = poll;
-
-        store.write(radios);
+        const count = await store.addVotesToOption(pollId, radioOption);
 
         await fetch('http://event-bus:4001/events', {
             method: 'POST',
@@ -69,14 +58,15 @@ app.post('/polls/:pollId/:radioOption', async (req, res) => {
 
     } catch (err) {
         logger.error(`(${process.pid}) Radio Service: ${err}`);
-        res.status(500).send({
+        return res.status(500).send({
             status: 'ERROR',
             message: err,
         });
     }
 
-    res.status(201).send(radios[pollId]);
-    logger.info(`(${process.pid}) Radio Service: ${JSON.stringify(radios)}`);
+    res.status(201).send({ status: 'OK' });
+    // res.status(201).send({ pollId, radioOption, count });
+    // logger.info(`(${process.pid}) Radio Service: ${JSON.stringify({ pollId, radioOption, count })}`);
 
 
 });

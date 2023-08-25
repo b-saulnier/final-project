@@ -26,10 +26,14 @@ const logger = winston.createLogger({
     ]
   });
 
+/*
+    well. All the databases now are the same mongodb database, for better or worse
+    is this still 'microservice' architecture? not sure
+    database functions:
+        addPoll,
+        readAllPolls,
+        addVotesToOption
 
-/* 
-    associated database stores polls and poll options 
-    does not store votes
 */
 
 
@@ -51,14 +55,11 @@ app.post('/polls', async (req, res) => {
     const poll = {
         id,
         title,
-        options, // array of strings
+        options, 
     };
 
     try {
-        const polls = store.read();
-        polls[id] = poll;
-
-        store.write(polls);
+        await store.addPoll(id, title, options);
 
 
         logger.info(`(Process ID ${process.pid}) Poll Service: sending PollCreated event`);

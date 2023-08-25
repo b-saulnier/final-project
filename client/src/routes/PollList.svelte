@@ -24,8 +24,8 @@
     });
 
     $: entriesArray = Object.entries(polls);
-    $: idsArray = entriesArray.map(([id, poll]) => id);
-    $: pollArray = entriesArray.map(([id, poll]) => poll);
+    $: idsArray = entriesArray.map(([id, _]) => id);
+    $: pollArray = entriesArray.map(([_, poll]) => poll);
     $: console.log("pollArray", pollArray);
     $: console.log("idsArray", idsArray);
 

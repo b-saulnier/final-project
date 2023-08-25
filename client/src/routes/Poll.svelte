@@ -1,14 +1,11 @@
 <script>
-    import { store } from "./store.js";
     import Stats from "./Stats.svelte";
 
     export let poll = {};
     let selectedOption = '';
-
     let hasVoted = false;
 
     console.log("poll", poll);
-
 
     async function vote() {
         if (selectedOption === '') {
@@ -17,8 +14,6 @@
 
         console.log("vote", selectedOption);
 
-        
-
         await fetch(`http://localhost:4004/polls/${poll.id}/${selectedOption}`, {
             method: "POST",
             headers: {
@@ -26,18 +21,8 @@
             }
         });
 
-        // increment store instead of fetching for one change
-
         poll.options[selectedOption] += 1;
-
         hasVoted = true;
-
-        // store.update(data => {
-        //     data[poll.id].options[selectedOption] += 1;
-        //     return data;
-        // });
-
-
     }
 
 
@@ -66,8 +51,8 @@
     <div class="mb-2">
 
 
-    <button class="btn btn-info" 
-        disabled={hasVoted} type="button" on:click={vote}>Vote</button>
+        <button class="btn btn-info" 
+            disabled={hasVoted} type="button" on:click={vote}>Vote</button>
 
     </div>
     

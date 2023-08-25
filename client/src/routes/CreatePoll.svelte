@@ -1,24 +1,9 @@
 <script>
-  import { store } from "./store";
-
+    import { store } from "./store";
 
     let title = '';
     let newOption = '';
     let options = [];
-
-    function addOption() {
-        // we don't want to add this stuff to the server until the whole poll is completed
-
-        if (newOption === '') {
-            alert("Please add an option");
-            return;
-        }
-
-        options = [...options, newOption];
-        console.log("adding new option to options", newOption, options);
-        newOption = '';
-
-    }
 
     async function createPoll() {
         if (options.length === 0 || options.length === 1) {
@@ -27,7 +12,6 @@
         if (title === '') {
             return;
         }
-
 
         console.log("createPoll", title, options)
         await fetch(`http://localhost:4003/polls`, {
@@ -40,8 +24,6 @@
                 options
             })
         });
-
-        console.log("createPoll now fetching from query")
 
         // fetch from query service on port 4000
         const response = await fetch(`http://localhost:4000/polls`);
@@ -56,6 +38,19 @@
         title = '';
         options = [];
 
+    }
+
+    function addOption() {
+        // we don't want to add this stuff to the server until the whole poll is completed
+
+        if (newOption === '') {
+            alert("Please add an option");
+            return;
+        }
+
+        options = [...options, newOption];
+        console.log("adding new option to options", newOption, options);
+        newOption = '';
 
     }
 
@@ -74,8 +69,6 @@
             type="text" name="option" bind:value={newOption} />
         <button class="btn btn-info"
         type="button" on:click={addOption}>Add Option</button>
-        
-
         
 
         <h3>Title: {title}</h3>

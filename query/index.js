@@ -27,10 +27,75 @@ const logger = winston.createLogger({
   });
 
 
-app.get('/polls', (req, res) => {
+app.get('/polls', async (req, res) => {
     logger.info(`(Process ID ${process.pid}) Query Service: responding to query`);
-    const polls = store.read();
-    res.status(200).send(polls);
+
+
+    const polls = await store.readAllPolls();
+
+
+    // convert to object for ... so I don't need to redo the frontend
+    const query = {};
+    polls.forEach(poll => {
+      /* 
+        Currently, a poll is like this:
+
+        const newPoll = {
+            _id: id, // User-defined ID
+            title,
+            options
+        };
+
+        So the polls response would be like this:
+
+        [
+          {
+            _id,
+            title,
+            options : [
+              { option, votes},
+              ...
+            ]
+          },
+          ...
+        ]
+
+        We switched to this new format because of MongoDB, but the UI expects the old format based off of JSON objects.
+        So, we want it to look like this:
+
+        This is what the response will look like:
+        {
+          id: {
+            id,
+            title,
+            options: {
+              option1: votes,
+              option2: votes,
+              ...
+            }
+          }
+        }
+        
+        Therefore, we need to convert each poll to the correct format, and put it into the query object
+      */
+
+      const newPoll = {
+        id: poll._id,
+        title: poll.title,
+        options: {}
+      };
+      poll.options.forEach(o => {
+        newPoll.options[o.option] = o.votes;
+      });
+
+      query[poll._id] = newPoll;
+    });
+
+    console.log("query", query);
+
+
+
+    res.status(200).send(query);
 });
 
 
@@ -38,32 +103,32 @@ app.get('/polls', (req, res) => {
 app.post('/events', (req, res) => {
     logger.info(`(Process ID ${process.pid}) Received event: ${req.body.type}`);
 
-    const query = store.read();
+    // const query = store.read();
 
 
-    if (req.body.type === 'PollCreated') {
-        const { id, title, options } = req.body.data;
+    // if (req.body.type === 'PollCreated') {
+    //     const { id, title, options } = req.body.data;
         
-        query[id] = { id, title };
-        query[id].options = {};
+    //     query[id] = { id, title };
+    //     query[id].options = {};
 
-        options.forEach(option => {
-            query[id].options[option] = 0;
-        });
+    //     options.forEach(option => {
+    //         query[id].options[option] = 0;
+    //     });
 
-    }
+    // }
 
-    else if (req.body.type === 'RadioChosen') {
-        const { pollId, radioOption, count } = req.body.data;
-        logger.info("query", pollId, radioOption, count);
+    // else if (req.body.type === 'RadioChosen') {
+    //     const { pollId, radioOption, count } = req.body.data;
+    //     logger.info("query", pollId, radioOption, count);
 
-        let options = query[pollId].options || {};
-        options[radioOption] = count;
-        query[pollId].options = options;
+    //     let options = query[pollId].options || {};
+    //     options[radioOption] = count;
+    //     query[pollId].options = options;
 
-    }
+    // }
 
-    store.write(query);
+    // store.write(query);
     res.send({ status: 'OK' });
 });
 
